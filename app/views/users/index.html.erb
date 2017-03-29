@@ -18,9 +18,14 @@
 			<td><%= usuario.email %></td>
 			<td><%= link_to "Editar", edit_user_path(usuario) %></td>
 			<td><%= link_to "Eliminar", usuario, method: :delete, confirm: "Estas seguro?" %></td>
+
 		</tr>
 	<% end %>
+	<% if @usuarios.size==0 %>
+		USUARIOS ENCONTRADOS
+	<% END %>
 </table>
 
+<%= link_to "Nuevo usuario", new_user_path %>
 </body>
 </html>

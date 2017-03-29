@@ -6,6 +6,9 @@
 <body>
 
 <h1>Listando usuarios</h1>
+<% flash.each do |key, value|%>
+<div><%= value %></div>
+<% end %>
 <table>
 	<tr>
 		<td>Nombre</td>
@@ -27,5 +30,6 @@
 </table>
 
 <%= link_to "Nuevo usuario", new_user_path %>
+<%= link_to "Registrar", "/signup"%>
 </body>
 </html>

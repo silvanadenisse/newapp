@@ -1,6 +1,16 @@
 <h1>Editando usuario</h1>
 
 <% form_for(@usuario) do |f| %>
+	<% if @usuario.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@usuario.errors.count, "error") %></h2>
+			<ul>
+			<% @usuario.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
 
 	<div class="field">
 		<%= f.label :nombre %><br>
